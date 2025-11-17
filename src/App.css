@@ -9,23 +9,22 @@
   justify-content: space-between;
   align-items: center;
 
-  /* Transparence + blur */
-  background: rgba(255, 255, 255, 0.1);   /* très transparent */
-  backdrop-filter: blur(12px);            /* flou moderne */
-  -webkit-backdrop-filter: blur(12px);    /* pour Safari */
+  background: rgba(255, 255, 255, 0.1);   
+  backdrop-filter: blur(12px);           
+  -webkit-backdrop-filter: blur(12px);   
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* ligne légère */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   padding: 15px 30px;
-  position: fixed;  /* pour rester en haut */
+  position: fixed;  
   top: 0;
   width: 100%;
-  z-index: 1000;    /* pour passer devant la vidéo */
+  z-index: 1000;   
 }
 
 .logo {
   font-size: 22px;
   font-weight: bold;
-  color: #fff;
+  color: #0f0e0e;
 }
 
 .nav-links {
@@ -39,7 +38,7 @@
 
 .nav-links a {
   text-decoration: none;
-  color: #fff;
+  color: #060606;
   transition: 0.3s;
 }
 
