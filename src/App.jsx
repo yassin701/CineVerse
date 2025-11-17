@@ -1,12 +1,21 @@
 import { useState } from 'react'
+import Navbar from './Components/Navbar'
+import Footer from './Components/Footer'
+import { BrowserRouter,Routes , Route } from 'react-router-dom'
+
 import './App.css'
 
 function App() {
 
   return (
-    <>
-      <h1>hello</h1>
-    </>
+
+    <BrowserRouter>
+      <Navbar/>
+      <Routes>
+        
+      </Routes>
+      <Footer/>
+    </BrowserRouter>
   )
 }
 
