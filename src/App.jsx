@@ -19,7 +19,7 @@ function App() {
         <Route path='/' element={<Home/>}/>
         <Route path='/Contact' element={<Contact/>}/>
       </Routes>
-      <Footer/>
+    
     </BrowserRouter>
   );
 }
