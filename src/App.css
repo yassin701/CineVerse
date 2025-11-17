@@ -3,16 +3,21 @@
   margin: 0;
 }
 
+body{
+  background-image: url(./image/image_Home.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   background: rgba(255, 255, 255, 0.1);   
   backdrop-filter: blur(12px);           
   -webkit-backdrop-filter: blur(12px);   
-
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   padding: 15px 30px;
   position: fixed;  
@@ -88,3 +93,70 @@
 }
 
 
+
+
+/*Contact */
+/* Container général */
+.contact-container {
+  max-width: 500px;
+  margin: 90px auto;
+  padding: 20px 30px;
+ background: rgba(255, 255, 255, 0.1);   
+  backdrop-filter: blur(12px);           
+  -webkit-backdrop-filter: blur(12px);   
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+/* Titre */
+.contact-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Formulaire */
+.contact-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Labels */
+.contact-container label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+/* Inputs et textarea */
+.contact-container input,
+.contact-container textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  resize: vertical;
+}
+
+/* Bouton */
+.contact-container button {
+  padding: 15px 60px;
+ display: block;
+ margin: 0 auto;
+  background-color: #007BFF;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+  
+}
+
+.contact-container button:hover {
+  background-color: #0056b3;
+}
