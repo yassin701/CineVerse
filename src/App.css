@@ -50,24 +50,41 @@
   list-style: none;
 }
 
-
-
-.home-container {
-  background-image: url('/image/image_Home.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
-}
-
-/*Footer*/
-
-.footer {
-  text-align: center;
-  bottom: 0;
-  position: fixed;
-  background-color: #423E3E;
+/* ------------ HERO BANNER ------------- */
+.hero-banner {
   width: 100%;
-  padding: 15px;
-  color: white;
+  height: 80vh;
+  overflow: hidden;
 }
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+
+/* ------------ MOVIES ROW ------------- */
+.movies-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); 
+  gap: 10px;
+  height: 80vh;
+  background-color: #3a3535;
+  justify-items: center;
+
+  
+}
+
+.movie-card {
+  width: 180px;
+  border-radius: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.movie-card:hover {
+  transform: scale(1.07);
+}
+
+
