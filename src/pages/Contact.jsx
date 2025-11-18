@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState , useEffect } from 'react';
 
 
 export default function Contact() {
@@ -8,7 +8,7 @@ export default function Contact() {
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
   const handleSubmit = (e) =>{
       e.preventDefault();
 
@@ -24,6 +24,14 @@ export default function Contact() {
     setError("");
     setSuccess("Message sent successfully !");
   }
+  useEffect(() => {
+  if (error || success) {
+    setTimeout(() => {
+      setError("");
+      setSuccess("");
+    }, 3000);
+  }
+}, [error, success]);
 
   return (
     <div className="contact-container">
