@@ -3,13 +3,7 @@
   margin: 0;
 }
 
-body{
-  background-image: url(./image/image_Home.jpeg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
 
-}
 
 .navbar {
   display: flex;
@@ -55,44 +49,54 @@ body{
   list-style: none;
 }
 
-/* ------------ HERO BANNER ------------- */
+
 .hero-banner {
-  width: 100%;
-  height: 80vh;
-  overflow: hidden;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+   
 }
 
 .hero-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(70%);
+    
 }
 
-
-/* ------------ MOVIES ROW ------------- */
 .movies-row {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr); 
-  gap: 10px;
-  height: 80vh;
-  background-color: #3a3535;
-  justify-items: center;
-
-  
+    display: flex;
+     background-color: #555;
+     height: 50vh;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0px 20px;
+    margin-top: -40px;
+    position: relative;
+    z-index: 5;
+    
 }
 
 .movie-card {
-  width: 180px;
-  border-radius: 10px;
-  transition: 0.3s;
-  cursor: pointer;
+    width: 180px;
+    height: 260px;
+    border-radius: 15px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .movie-card:hover {
-  transform: scale(1.07);
+    transform: scale(1.1);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.9);
+    border-color: #e50914;
+    z-index: 10;
 }
-
-
 
 
 /*Contact */
@@ -159,4 +163,110 @@ body{
 
 .contact-container button:hover {
   background-color: #0056b3;
+}
+
+/* Styles pour la page de détails du film */
+
+body {
+    background-color: #9f8d8d;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* Conteneur principal */
+.details-container {
+    padding: 100px 100px;
+    min-height: 100vh;
+}
+
+/* La carte qui contient l'image et les informations */
+.details-card {
+    display: flex;
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: #1c1c1c;
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+    overflow: hidden; /* Empêche les débordements */
+}
+
+/* Image du Film */
+.details-image {
+    width: 325px;
+    height: 475px;
+    object-fit: cover;
+    flex-shrink: 0; /* Empêche l'image de rétrécir */
+    border-radius: 10px 0 0 10px;
+}
+
+/* Bloc d'Informations */
+.details-info {
+    padding: 40px;
+    flex-grow: 1;
+}
+
+.details-info h1 {
+    font-size: 3em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #e50914; /* Couleur d'accentuation */
+    border-bottom: 3px solid #333;
+    padding-bottom: 10px;
+}
+
+.details-info h3 {
+    font-size: 1.5em;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    color: #ccc;
+}
+
+.details-info p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.details-info b {
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Style de la liste (équipe) */
+.details-info ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.details-info li {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    border-left: 3px solid #e50914;
+    padding-left: 10px;
+}
+
+/* Responsivité pour les petits écrans */
+@media (max-width: 900px) {
+    .details-card {
+        flex-direction: column; 
+        border-radius: 10px;
+    }
+
+    .details-image {
+        width: 100%;
+        height: auto;
+        border-radius: 10px 10px 0 0;
+        max-height: 400px;
+        object-fit: cover;
+    }
+
+    .details-info {
+        padding: 20px;
+    }
+    
+    .details-info h1 {
+        font-size: 2em;
+        text-align: center;
+    }
 }
