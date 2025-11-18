@@ -134,7 +134,7 @@ const movies = [
   year: 2013,
   image: slide10,
   description:
-    "Dans le Birmingham des années 1920, la famille Shelby construit un empire criminel redoutable sous le commandement de Tommy Shelby.",
+    "Dans le Birmingham des années 1920, la famille Shelby construit un empire criminel redoutable sous le commandement de Tommas Shelby.",
   team: {
     director: "Steven Knight",
     actors: ["Cillian Murphy", "Paul Anderson", "Anya Taylor-Joy"],
