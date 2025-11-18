@@ -10,18 +10,17 @@ import { BrowserRouter,Routes , Route } from 'react-router-dom'
 
 
 function App() {
-
   return (
-
     <BrowserRouter>
-      <Navbar/>
+      <Navbar />
       <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/Contact' element={<Contact/>}/>
+        <Route path="/" element={<Home />} /> 
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/details/:id" element={<MovieDetails />} />
+       
       </Routes>
-    
     </BrowserRouter>
   );
 }
 
-export default App
+export default App;
