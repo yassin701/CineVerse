@@ -3,6 +3,12 @@ import slide2 from "../image/slide2.png";
 import slide3 from "../image/slide3.png";
 import slide4 from "../image/slide4.png";
 import slide5 from "../image/slide5.png";
+import slide6 from "../image/slide6.png";
+import slide7 from "../image/slide7.png";
+import slide8 from "../image/slide8.png";
+import slide9 from "../image/slide9.png";
+import slide10 from "../image/slide10.png";
+
 
 
 const movies = [
@@ -69,7 +75,76 @@ const movies = [
       actors: ["Jenna Ortega", "Emma Myers", "Hunter Doohan"],
       producer: "Al Gough"
     }
+  },
+  {
+  id: 6,
+  title: "Inception",
+  year: 2010,
+  image: slide6,
+  description:
+    "Un voleur spécialisé dans l'extraction d'informations à travers les rêves doit réaliser l'impossible : implanter une idée dans l'esprit d'une cible.",
+  team: {
+    director: "Christopher Nolan",
+    actors: ["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Ellen Page"],
+    producer: "Emma Thomas"
   }
+},
+{
+  id: 7,
+  title: "The Witcher",
+  year: 2019,
+  image: slide7,
+  description:
+    "Geralt de Riv, un sorceleur mutant, chasse des créatures dangereuses tout en essayant de trouver sa place dans un monde brutal.",
+  team: {
+    director: "Lauren Schmidt Hissrich",
+    actors: ["Henry Cavill", "Anya Chalotra", "Freya Allan"],
+    producer: "Tomasz Baginski"
+  }
+},
+{
+  id: 8,
+  title: "Stranger Things",
+  year: 2016,
+  image:slide8,
+  description:
+    "Dans une petite ville, la disparition d'un enfant révèle un univers parallèle sombre et dangereux appelé le Monde à l'Envers.",
+  team: {
+    director: "The Duffer Brothers",
+    actors: ["Millie Bobby Brown", "Finn Wolfhard", "David Harbour"],
+    producer: "Shawn Levy"
+  }
+},
+{
+  id: 9,
+  title: "Dune",
+  year: 2021,
+  image: slide9,
+  description:
+    "Paul Atreides, un jeune héritier aux dons extraordinaires, doit survivre sur une planète dangereuse au cœur d'une lutte politique et mystique.",
+  team: {
+    director: "Denis Villeneuve",
+    actors: ["Timothée Chalamet", "Zendaya", "Rebecca Ferguson"],
+    producer: "Mary Parent"
+  }
+},
+{
+  id: 10,
+  title: "Peaky Blinders",
+  year: 2013,
+  image: slide10,
+  description:
+    "Dans le Birmingham des années 1920, la famille Shelby construit un empire criminel redoutable sous le commandement de Tommy Shelby.",
+  team: {
+    director: "Steven Knight",
+    actors: ["Cillian Murphy", "Paul Anderson", "Anya Taylor-Joy"],
+    producer: "Katie Swinden"
+  }
+},
+
+
+
+
 ];
 
 export default movies;
