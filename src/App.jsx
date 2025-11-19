@@ -18,9 +18,11 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/details/:id" element={<MovieDetails />} />
       </Routes>
-    
     </BrowserRouter>
   );
 }
 
 export default App;
+
+
+

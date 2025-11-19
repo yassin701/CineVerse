@@ -1,4 +1,3 @@
-import React from 'react';
 import { useState , useEffect } from 'react';
 
 
@@ -34,7 +33,8 @@ export default function Contact() {
 }, [error, success]);
 
   return (
-    <div className="contact-container">
+    <div className='contact'>
+      <div className="contact-container">
       <h2>Contactez-nous</h2>
       <form>
         <div>
@@ -56,5 +56,7 @@ export default function Contact() {
        {error && <p style={{ color: "red" }}>{error}</p>}
        {success && <p style={{ color: "green" }}>{success}</p>}
     </div>
+    </div>
+    
   );
 }
