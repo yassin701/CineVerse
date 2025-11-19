@@ -121,28 +121,30 @@
 /*Contact */
 /* Container général */
 
+
 .contact {
-  
   width: 100%;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.75);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: 
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url("image/backgraound2.jpg") center/cover no-repeat;
+  backdrop-filter: blur(5px);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* FORM CONTAINER (NOIR) */
 .contact-container {
-  width: 90vh;
-  height: 600px;
-  margin: 80px auto;
+  width: 800px;     
+  height: 650px;    
+  background: rgba(0, 0, 0, 0.8); 
   padding: 50px;
-  background: rgba(0, 0, 0, 0.75); 
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(46, 37, 37, 0.6);
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+  color: white;
 }
+
 
 /* Titre */
 .contact-container h2 {
