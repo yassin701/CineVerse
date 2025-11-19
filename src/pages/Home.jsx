@@ -4,6 +4,8 @@ import movies from "../data/movies";
 import hero from "../image/image_Home.jpeg";
 import  { useState, useEffect } from "react";
 
+import bgVideo from "../image/bg.mp4";
+import { useState, useEffect } from "react";
 
 export default function Home() {
 
@@ -51,6 +53,7 @@ export default function Home() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
+      {/* HERO AVEC VIDEO BACKGROUND */}
 
             {error && <p style={{ color: "red", marginTop: "8px" }}>{error}</p>}
             
@@ -62,7 +65,9 @@ export default function Home() {
 
       {/* IMAGE HERO */}
       <div className="hero-banner">
-        <img src={hero} className="hero-img" alt="Hero" />
+        <video className="bg-video" autoPlay muted loop playsInline>
+          <source src={bgVideo} type="video/mp4" />
+        </video>
       </div>
 
       {/* LISTE DES FILMS */}
@@ -76,4 +81,3 @@ export default function Home() {
     </>
   );
 }
-
