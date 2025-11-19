@@ -126,7 +126,7 @@
   width: 100%;
   min-height: 100vh;
   background: 
-    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    linear-gradient(rgba(122, 92, 92, 0.6), rgba(0,0,0,0.6)),
     url("image/backgraound2.jpg") center/cover no-repeat;
   backdrop-filter: blur(6px);
   display: flex;
@@ -150,13 +150,9 @@
   flex-direction: column;
   gap: 20px;
   box-sizing: border-box;
-  transition: transform 0.3s ease;
 }
 
-/* Hover léger pour effet pro */
-.contact-container:hover {
-  transform: scale(1.02);
-}
+
 
 /* Titre */
 .contact-container h2 {
