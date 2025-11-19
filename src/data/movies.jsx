@@ -5,10 +5,14 @@ import slide4 from "../image/slide4.png";
 import slide5 from "../image/slide5.png";
 import slide6 from "../image/slide6.png";
 import slide7 from "../image/slide7.png";
-import slide8 from "../image/slide8.png";
-import slide9 from "../image/slide9.png";
+import slide8 from "../image/slide8.jpg";
+import slide9 from "../image/slide9.jpg";
 import slide10 from "../image/slide10.png";
-
+import slide11 from "../image/slide11.png";
+import slide12 from "../image/slide12.jpg";
+import slide13 from "../image/slide13.jpg";
+import slide14 from "../image/slide14.jpg";
+import slide15 from "../image/slide15.jpg";
 
 
 const movies = [
@@ -141,8 +145,75 @@ const movies = [
     producer: "Katie Swinden"
   }
 },
+{
+  id: 11,
+  title: "The Dark Knight",
+  year: 2008,
+  image: slide11,
+  description:
+    "Batman affronte le Joker, un criminel imprévisible qui plonge Gotham City dans le chaos. Une bataille psychologique intense s’engage.",
+  team: {
+    director: "Christopher Nolan",
+    actors: ["Christian Bale", "Heath Ledger", "Gary Oldman"],
+    producer: "Emma Thomas"
+  }
+},
 
+{
+  id: 12,
+  title: "The 100",
+  year: 2014,
+  image: slide12,
+  description:
+    "Après une apocalypse nucléaire, 100 jeunes délinquants sont renvoyés sur Terre pour déterminer si la planète est de nouveau habitable.",
+  team: {
+    director: "Jason Rothenberg",
+    actors: ["Eliza Taylor", "Bob Morley", "Marie Avgeropoulos"],
+    producer: "J.P. Niklaus"
+  }
+},
 
+{
+  id: 13,
+  title: "Money Heist",
+  year: 2017,
+  image: slide13,
+  description:
+    "Un mystérieux homme appelé Le Professeur recrute huit criminels pour mener le plus grand braquage jamais organisé en Espagne.",
+  team: {
+    director: "Álex Pina",
+    actors: ["Úrsula Corberó", "Álvaro Morte", "Pedro Alonso"],
+    producer: "Jesús Colmenar"
+  }
+},
+
+{
+  id: 14,
+  title: "Interstellar",
+  year: 2014,
+  image: slide14,
+  description:
+    "Une équipe d’astronautes voyage à travers un trou de ver afin de trouver une nouvelle planète habitable pour sauver l’humanité.",
+  team: {
+    director: "Christopher Nolan",
+    actors: ["Matthew McConaughey", "Anne Hathaway", "Jessica Chastain"],
+    producer: "Emma Thomas"
+  }
+},
+
+{
+  id: 15,
+  title: "Game of Thrones",
+  year: 2011,
+  image: slide15,
+  description:
+    "Dans un royaume ravagé par la guerre et la trahison, plusieurs familles se battent pour le contrôle du Trône de Fer.",
+  team: {
+    director: "David Benioff & D.B. Weiss",
+    actors: ["Emilia Clarke", "Kit Harington", "Peter Dinklage"],
+    producer: "George R.R. Martin"
+  }
+}
 
 
 ];
