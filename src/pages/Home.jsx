@@ -2,10 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 import movies from "../data/movies";
 import hero from "../image/image_Home.jpeg";
+import { useState, useEffect } from "react";
 
 export default function Home() {
+
+  
   return (
     <>
+
+
+      
+
       {/* IMAGE HERO */}
       <div className="hero-banner">
         <img src={hero} className="hero-img" alt="Hero" />
