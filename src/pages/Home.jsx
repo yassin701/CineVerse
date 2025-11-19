@@ -1,14 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import movies from "../data/movies";
-import hero from "../image/image_Home.jpeg";
+import bgVideo from "../image/bg.mp4";
 
 export default function Home() {
   return (
     <>
-      {/* IMAGE HERO */}
+      {/* HERO AVEC VIDEO BACKGROUND */}
       <div className="hero-banner">
-        <img src={hero} className="hero-img" alt="Hero" />
+        <video className="bg-video" autoPlay muted loop playsInline>
+          <source src={bgVideo} type="video/mp4" />
+        </video>
       </div>
 
       {/* LISTE DES FILMS */}
@@ -22,4 +24,3 @@ export default function Home() {
     </>
   );
 }
-
