@@ -8,19 +8,24 @@ export default function Home() {
   const [showPopup, setShowPopup] = useState(false);
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
-  const [step, setStep] = useState(1);
+  // const [step, setStep] = useState(1);
 
 
-  const handleYes = () => {
-    setStep(2);
+  // const handleYes = () => {
+  //   setStep(2);
+  // };
+
+  // const handleNo = () => {
+  //   setShowPopup(false); 
+  // };
+
+  const closePopup = () => {
+  setShowPopup(false);
   };
 
-  const handleNo = () => {
-    setShowPopup(false); 
-  };
   useEffect(() => {
     setTimeout(() => {
-      setShowPopup(true);
+      setShowPopup(true); 
     }, 5000);
    
   }, []);
@@ -52,35 +57,21 @@ export default function Home() {
 {/* POPUP */}
       {showPopup && (
         <div className="popup-overlay">
-          <div className="popup-box">
-          {step === 1 && (
+        <div className="popup-box">
           <div>
-            <p>popup email</p>
-            <button onClick={handleYes}>Yes</button>
-            <button onClick={handleNo}>No</button>
-          </div>
-        )}
-          {step === 2 && (
-        <div>
-          <h2>Welcome ! 👋</h2>
-          <p>Enter your email to continue</p>
+            <h2>Welcome ! 👋</h2>
+            <p>Enter your email to continue</p>
 
-          <input
-            type="email"
-            placeholder="Your email..."
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-
-          {error && (
-            <p style={{ color: "red", marginTop: "8px" }}>{error}</p>
-          )}
-
-          <button onClick={handleSubmit}>Continue</button>
+            <input type="email" placeholder="Your email..." value={email}onChange={(e) => setEmail(e.target.value)}/>
+            {error && (
+              <p style={{ color: "red", marginTop: "8px" }}>{error}</p>
+            )}
+            <div className="btn-row">
+              <button className="continue-btn" onClick={handleSubmit}>Continue</button>
+              <button className="close-btn" onClick={closePopup}>close ✖</button>
+            </div>
+          </div>   
         </div>
-      )}
-            
-          </div>
         </div>
       )}
 
