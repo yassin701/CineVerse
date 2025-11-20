@@ -10,30 +10,39 @@ export default function Home() {
   const [error, setError] = useState("");
 
   const closePopup = () => {
-  setShowPopup(false);
+    setShowPopup(false);
   };
 
   useEffect(() => {
-    setTimeout(() => {
-      setShowPopup(true); 
-    }, 5000);
-   
+    // Vérifie si le popup a déjà été affiché dans cette session
+    const hasShown = sessionStorage.getItem("popupShown");
+
+    if (!hasShown) {
+      // Affiche le popup après 3s
+      const timer = setTimeout(() => {
+        setShowPopup(true);
+        sessionStorage.setItem("popupShown", "true"); // marque comme affiché
+      }, 3000);
+
+      // Nettoyage du timer
+      return () => clearTimeout(timer);
+    }
   }, []);
 
-   const handleSubmit = (e) => {
-  e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  if (!email.trim()) {
-    setError("Please enter your email address!");
-    return;
-  }
+    if (!email.trim()) {
+      setError("Please enter your email address!");
+      return;
+    }
 
-  if (!emailRegex.test(email)) {
-    setError("Please enter a valid email address!");
-    return;
-  }
+    if (!emailRegex.test(email)) {
+      setError("Please enter a valid email address!");
+      return;
+    }
 
   setError("");        
   setShowPopup(false); 
@@ -44,13 +53,13 @@ export default function Home() {
   
   return (
     <>
-{/* POPUP */}
+      {/* POPUP */}
       {showPopup && (
         <div className="popup-overlay">
-        <div className="popup-box">
-          <div>
-            <h2>Welcome ! 👋</h2>
-            <p>Enter your email to continue</p>
+          <div className="popup-box">
+            <div>
+              <h2>Welcome ! 👋</h2>
+              <p>Enter your email to continue</p>
 
             <input type="email" placeholder="Your email..." value={email}onChange={(e) => setEmail(e.target.value)}/>
             {error && (
