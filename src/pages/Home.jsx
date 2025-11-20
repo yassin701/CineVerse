@@ -1,106 +1,81 @@
 import { Link } from "react-router-dom";
-<<<<<<< HEAD
 import movies from "../data/movies";
 import bgVideo from "../image/bg.mp4";
 import { useState, useEffect } from "react";
-=======
-import movies from "../data/movies"; 
-import  { useState, useEffect } from "react";
-import bgVideo from "../image/bg.mp4";
-
->>>>>>> 686807081ea4fd7fb2c57dacd59250ad33abe8f1
 
 export default function Home() {
 
   const [showPopup, setShowPopup] = useState(false);
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
-  // const [step, setStep] = useState(1);
-
-
-  // const handleYes = () => {
-  //   setStep(2);
-  // };
-
-  // const handleNo = () => {
-  //   setShowPopup(false); 
-  // };
 
   const closePopup = () => {
-  setShowPopup(false);
+    setShowPopup(false);
   };
 
   useEffect(() => {
-    setTimeout(() => {
-      setShowPopup(true); 
-    }, 5000);
-   
+    // Vérifie si le popup a déjà été affiché dans cette session
+    const hasShown = sessionStorage.getItem("popupShown");
+
+    if (!hasShown) {
+      // Affiche le popup après 3s
+      const timer = setTimeout(() => {
+        setShowPopup(true);
+        sessionStorage.setItem("popupShown", "true"); // marque comme affiché
+      }, 3000);
+
+      // Nettoyage du timer
+      return () => clearTimeout(timer);
+    }
   }, []);
 
-   const handleSubmit = (e) => {
-  e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  if (!email.trim()) {
-    setError("Please enter your email address!");
-    return;
-  }
+    if (!email.trim()) {
+      setError("Please enter your email address!");
+      return;
+    }
 
-  if (!emailRegex.test(email)) {
-    setError("Please enter a valid email address!");
-    return;
-  }
+    if (!emailRegex.test(email)) {
+      setError("Please enter a valid email address!");
+      return;
+    }
 
-<<<<<<< HEAD
-  setError("");        
-  setShowPopup(false); 
+    setError("");
+    setShowPopup(false);
   };
 
-   
-=======
-  setError("")        
-  setShowPopup(false)
-  };
->>>>>>> 686807081ea4fd7fb2c57dacd59250ad33abe8f1
-
-  
   return (
     <>
-{/* POPUP */}
+      {/* POPUP */}
       {showPopup && (
         <div className="popup-overlay">
-        <div className="popup-box">
-          <div>
-            <h2>Welcome ! 👋</h2>
-            <p>Enter your email to continue</p>
+          <div className="popup-box">
+            <div>
+              <h2>Welcome ! 👋</h2>
+              <p>Enter your email to continue</p>
 
-<<<<<<< HEAD
-            <input type="email" placeholder="Your email..." value={email}onChange={(e) => setEmail(e.target.value)}/>
-            {error && (
-              <p style={{ color: "red", marginTop: "8px" }}>{error}</p>
-            )}
-            <div className="btn-row">
-              <button className="continue-btn" onClick={handleSubmit}>Continue</button>
-              <button className="close-btn" onClick={closePopup}>close ✖</button>
+              <input
+                type="email"
+                placeholder="Your email..."
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              {error && <p style={{ color: "red", marginTop: "8px" }}>{error}</p>}
+
+              <div className="btn-row">
+                <button className="continue-btn" onClick={handleSubmit}>
+                  Continue
+                </button>
+                <button className="close-btn" onClick={closePopup}>
+                  close ✖
+                </button>
+              </div>
             </div>
-          </div>   
-        </div>
-=======
-            <input
-              type="email"
-              placeholder="Your email..."
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-      {/* HERO AVEC VIDEO BACKGROUND */}
-
-            {error && <p style={{ color: "red", marginTop: "8px" }}>{error}</p>}
-            
-
-            <button onClick={handleSubmit}>Continue</button>
           </div>
->>>>>>> 686807081ea4fd7fb2c57dacd59250ad33abe8f1
         </div>
       )}
 
