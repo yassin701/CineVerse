@@ -28,6 +28,9 @@ export default function Contact() {
     setTimeout(() => {
       setError("");
       setSuccess("");
+      setEmail("");
+      setName("");
+      setMessage("");
     }, 3000);
   }
 }, [error, success]);

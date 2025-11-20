@@ -126,7 +126,7 @@
   width: 100%;
   min-height: 100vh;
   background: 
-    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    linear-gradient(rgba(122, 92, 92, 0.6), rgba(0,0,0,0.6)),
     url("image/backgraound2.jpg") center/cover no-repeat;
   backdrop-filter: blur(6px);
   display: flex;
@@ -150,13 +150,9 @@
   flex-direction: column;
   gap: 20px;
   box-sizing: border-box;
-  transition: transform 0.3s ease;
 }
 
-/* Hover léger pour effet pro */
-.contact-container:hover {
-  transform: scale(1.02);
-}
+
 
 /* Titre */
 .contact-container h2 {
@@ -292,7 +288,7 @@
 /* Image (réduite aussi) */
 .details-image {
   width: 260px;         
-  height: 380px;        
+  height: 400px;        
   object-fit: cover;
   flex-shrink: 0;
 }
@@ -301,6 +297,22 @@
 .details-info {
   padding: 25px 30px;   
   flex-grow: 1;
+}
+
+.details-info button{
+  margin: 10px auto;
+  padding: 10px;
+  display: flex;
+  font-size: 15px;
+  background: #e50914;
+  color: #e0e0e0;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+ transition:0.5s ease ; 
+}
+.details-info button:hover{
+  transform: scale(1.1);
 }
 
 .details-info h1 {
