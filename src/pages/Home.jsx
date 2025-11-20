@@ -1,24 +1,33 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import movies from "../data/movies";
-import hero from "../image/image_Home.jpeg";
-import  { useState, useEffect } from "react";
-
+import bgVideo from "../image/bg.mp4";
+import { useState, useEffect } from "react";
 
 export default function Home() {
 
   const [showPopup, setShowPopup] = useState(false);
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
+  const [step, setStep] = useState(1);
 
+
+  const handleYes = () => {
+    setStep(2);
+  };
+
+  const handleNo = () => {
+    setShowPopup(false); 
+  };
   useEffect(() => {
-    setShowPopup(true);
+    setTimeout(() => {
+      setShowPopup(true);
+    }, 5000);
+   
   }, []);
 
    const handleSubmit = (e) => {
   e.preventDefault();
 
-  // Vérification basique de l'email
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   if (!email.trim()) {
@@ -31,9 +40,11 @@ export default function Home() {
     return;
   }
 
-  setError("");        // email valide → clear error
-  setShowPopup(false); // fermer popup
-};
+  setError("");        
+  setShowPopup(false); 
+  };
+
+   
 
   
   return (
@@ -42,27 +53,42 @@ export default function Home() {
       {showPopup && (
         <div className="popup-overlay">
           <div className="popup-box">
-            <h2>Welcome ! 👋</h2>
-            <p>Enter your email to continue</p>
+          {step === 1 && (
+          <div>
+            <p>popup email</p>
+            <button onClick={handleYes}>Yes</button>
+            <button onClick={handleNo}>No</button>
+          </div>
+        )}
+          {step === 2 && (
+        <div>
+          <h2>Welcome ! 👋</h2>
+          <p>Enter your email to continue</p>
 
-            <input
-              type="email"
-              placeholder="Your email..."
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
+          <input
+            type="email"
+            placeholder="Your email..."
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
 
-            {error && <p style={{ color: "red", marginTop: "8px" }}>{error}</p>}
+          {error && (
+            <p style={{ color: "red", marginTop: "8px" }}>{error}</p>
+          )}
+
+          <button onClick={handleSubmit}>Continue</button>
+        </div>
+      )}
             
-
-            <button onClick={handleSubmit}>Continue</button>
           </div>
         </div>
       )}
 
       {/* IMAGE HERO */}
       <div className="hero-banner">
-        <img src={hero} className="hero-img" alt="Hero" />
+        <video className="bg-video" autoPlay muted loop playsInline>
+          <source src={bgVideo} type="video/mp4" />
+        </video>
       </div>
 
       {/* LISTE DES FILMS */}
@@ -76,4 +102,3 @@ export default function Home() {
     </>
   );
 }
-
