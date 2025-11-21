@@ -14,17 +14,13 @@ export default function Home() {
   };
 
   useEffect(() => {
-    // Vérifie si le popup a déjà été affiché dans cette session
     const hasShown = sessionStorage.getItem("popupShown");
 
     if (!hasShown) {
-      // Affiche le popup après 3s
       const timer = setTimeout(() => {
         setShowPopup(true);
-        sessionStorage.setItem("popupShown", "true"); // marque comme affiché
+        sessionStorage.setItem("popupShown", "true"); 
       }, 3000);
-
-      // Nettoyage du timer
       return () => clearTimeout(timer);
     }
   }, []);
@@ -50,7 +46,6 @@ export default function Home() {
 
    
 
-  
   return (
     <>
       {/* POPUP */}
