@@ -1,8 +1,8 @@
 import Navbar from './Components/Navbar'
-
 import Home from './pages/Home'
 import Contact from './pages/Contact'
 import MovieDetails from './pages/MovieDetails'
+import Footer from './Components/Footer'
 import './App.css'
 import { BrowserRouter,Routes , Route } from 'react-router-dom'
 
@@ -14,10 +14,11 @@ function App() {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} /> 
+        <Route path="/" element={<Home/>} /> 
         <Route path="/contact" element={<Contact />} />
         <Route path="/details/:id" element={<MovieDetails />} />
       </Routes>
+      <Footer/>
     </BrowserRouter>
   );
 }
