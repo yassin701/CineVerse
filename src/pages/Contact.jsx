@@ -22,10 +22,7 @@ export default function Contact() {
     }
     setError("");
     setSuccess("Message sent successfully !");
-  }
-  useEffect(() => {
-  if (error || success) {
-    setTimeout(() => {
+     setTimeout(() => {
       setError("");
       setSuccess("");
       setEmail("");
@@ -33,7 +30,8 @@ export default function Contact() {
       setMessage("");
     }, 3000);
   }
-}, [error, success]);
+
+
 
   return (
     <div className='contact'>
