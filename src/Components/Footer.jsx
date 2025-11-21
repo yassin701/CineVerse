@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 
 export default function Footer() {
   return (
-    <div>
-        
-    </div>
-  )
+    <footer className="footer">
+      <p>© 2025 CineVerse. All rights reserved.</p>
+    </footer>
+  );
 }
