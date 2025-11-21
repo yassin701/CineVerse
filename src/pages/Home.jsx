@@ -44,10 +44,13 @@ export default function Home() {
       return;
     }
 
-    setError("");
-    setShowPopup(false);
+  setError("");        
+  setShowPopup(false); 
   };
 
+   
+
+  
   return (
     <>
       {/* POPUP */}
@@ -58,24 +61,16 @@ export default function Home() {
               <h2>Welcome ! 👋</h2>
               <p>Enter your email to continue</p>
 
-              <input
-                type="email"
-                placeholder="Your email..."
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              {error && <p style={{ color: "red", marginTop: "8px" }}>{error}</p>}
-
-              <div className="btn-row">
-                <button className="continue-btn" onClick={handleSubmit}>
-                  Continue
-                </button>
-                <button className="close-btn" onClick={closePopup}>
-                  close ✖
-                </button>
-              </div>
+            <input type="email" placeholder="Your email..." value={email}onChange={(e) => setEmail(e.target.value)}/>
+            {error && (
+              <p style={{ color: "red", marginTop: "8px" }}>{error}</p>
+            )}
+            <div className="btn-row">
+              <button className="continue-btn" onClick={handleSubmit}>Continue</button>
+              <button className="close-btn" onClick={closePopup}>close ✖</button>
             </div>
-          </div>
+          </div>   
+        </div>
         </div>
       )}
 
