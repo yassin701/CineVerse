@@ -17,10 +17,12 @@ export default function Home() {
     const hasShown = sessionStorage.getItem("popupShown");
 
     if (!hasShown) {
+
       const timer = setTimeout(() => {
         setShowPopup(true);
-        sessionStorage.setItem("popupShown", "true"); 
+        sessionStorage.setItem("popupShown", "true");
       }, 3000);
+
       return () => clearTimeout(timer);
     }
   }, []);
@@ -34,17 +36,16 @@ export default function Home() {
       setError("Please enter your email address!");
       return;
     }
-
     if (!emailRegex.test(email)) {
       setError("Please enter a valid email address!");
       return;
     }
-
-  setError("");        
-  setShowPopup(false); 
+    setError("");
+    setShowPopup(false);
   };
 
-   
+
+
 
   return (
     <>
@@ -56,16 +57,16 @@ export default function Home() {
               <h2>Welcome ! 👋</h2>
               <p>Enter your email to continue</p>
 
-            <input type="email" placeholder="Your email..." value={email}onChange={(e) => setEmail(e.target.value)}/>
-            {error && (
-              <p style={{ color: "red", marginTop: "8px" }}>{error}</p>
-            )}
-            <div className="btn-row">
-              <button className="continue-btn" onClick={handleSubmit}>Continue</button>
-              <button className="close-btn" onClick={closePopup}>close ✖</button>
+              <input type="email" placeholder="Your email..." value={email} onChange={(e) => setEmail(e.target.value)} />
+              {error && (
+                <p style={{ color: "red", marginTop: "8px" }}>{error}</p>
+              )}
+              <div className="btn-row">
+                <button className="continue-btn" onClick={handleSubmit}>Continue</button>
+                <button className="close-btn" onClick={closePopup}>close ✖</button>
+              </div>
             </div>
-          </div>   
-        </div>
+          </div>
         </div>
       )}
 
