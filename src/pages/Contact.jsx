@@ -21,24 +21,22 @@ export default function Contact() {
       setSuccess("");
     return;
     }
-    setError("");
+   
     setSuccess("Message sent successfully !");
+    setEmail("")
+    setMessage("")
+    setName("")
      setTimeout(() => {
-      setError("");
       setSuccess("");
-      setEmail("");
-      setName("");
-      setMessage("");
     }, 3000);
   }
    useEffect(() => {
-    if (error || success) {
+    if (error) {
       setTimeout(() => {
         setError("");
-        setSuccess("");
       }, 3000);
     }
-  }, [error, success]);
+  }, [error]);
 
 
 

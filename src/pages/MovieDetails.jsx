@@ -10,7 +10,7 @@ export default function MovieDetails() {
   const movie = movies.find((m) => m.id === Number(id));
 
   if (!movie) return <h2>Film introuvable</h2>;
-
+  
   return (
   <>
     <div className="details-container">
