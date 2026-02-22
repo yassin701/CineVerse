@@ -1,70 +1,54 @@
-import React from 'react';
-import { useState , useEffect } from 'react';
-
+import { useState } from "react";
 
 export default function Contact() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
-  const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
-  const handleSubmit = (e) =>{
-      e.preventDefault()
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [success, setSuccess] = useState(false);
 
-    if (!name || !email || !message) {
-      setError("All fields are required !");
-      setSuccess(""); 
-      return;
-    }else if (!emailRegex.test(email)) {
-      setError("Invalid email format !");
-      setSuccess("");
-    return;
-    }
-   
-    setSuccess("Message sent successfully !");
-    setEmail("")
-    setMessage("")
-    setName("")
-     setTimeout(() => {
-      setSuccess("");
-    }, 3000);
-  }
-   useEffect(() => {
-    if (error) {
-      setTimeout(() => {
-        setError("");
-      }, 3000);
-    }
-  }, [error]);
-
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSuccess(true);
+    setTimeout(() => setSuccess(false), 3000);
+    setFormData({ name: "", email: "", message: "" });
+  };
 
   return (
-    <div className='contact'>
-      <div className="contact-container">
-      <h2>Contactez-nous</h2>
-      <form>
-        <div>
-          <label>Name :</label>
-          <input type="text"  value={name} onChange={(e)=>setName(e.target.value)}/>
-        </div>
-        <div>
-          <label>Email :</label>
-          <input type="email"  value={email}  onChange={(e)=>setEmail(e.target.value)}/>
-        </div>
-        <div>
-          <label>Message :</label>
-          <textarea  value={message} rows="5"  onChange={(e)=>setMessage(e.target.value)}/>
-        </div>
-        <div>
-          <button type="submit" onClick={handleSubmit}>Send</button>
-        </div>
-      </form>
-       {error && <p style={{ color: "red" }}>{error}</p>}
-       {success && <p style={{ color: "green" }}>{success}</p>}
+    <div className="contact-section">
+      <div className="contact-form">
+        <h1>Contact Us</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <input
+              type="text"
+              placeholder="Name"
+              value={formData.name}
+              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="email"
+              placeholder="Email"
+              value={formData.email}
+              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <textarea
+              placeholder="Message"
+              rows="5"
+              value={formData.message}
+              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+              required
+            />
+          </div>
+          <button type="submit" className="submit-btn">
+            Send Message
+          </button>
+        </form>
+        {success && <p style={{ color: "#46d369", marginTop: "20px", textAlign: 'center' }}>Message sent successfully!</p>}
+      </div>
     </div>
-    </div>
-    
   );
 }

@@ -1,9 +1,12 @@
 import React from "react";
 
-export default function Footer() {
+const Footer = () => {
   return (
     <footer className="footer">
-      <p>© 2025 CineVerse. All rights reserved.</p>
+      <p>&copy; 1997-2026 CineVerse, Inc.</p>
+      <p style={{ marginTop: '10px', fontSize: '12px' }}>This is a Netflix-inspired clone for demonstration purposes.</p>
     </footer>
   );
-}
+};
+
+export default Footer;
