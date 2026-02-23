@@ -12,6 +12,7 @@ export default function Home() {
   const closePopup = () => {
     setShowPopup(false);
   };
+  
 
   useEffect(() => {
     const hasShown = sessionStorage.getItem("popupShown");
